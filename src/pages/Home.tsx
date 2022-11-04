@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { StyleSheet, View } from 'react-native';
-
 import { Header } from '../components/Header';
 import { Task, TasksList } from '../components/TasksList';
 import { TodoInput } from '../components/TodoInput';
@@ -39,8 +38,8 @@ export function Home() {
 
   return (
     <View style={styles.container}>
-      <Header tasksCounter={tasks.length} />
 
+      <Header tasksCounter={tasks.length} />
       <TodoInput addTask={handleAddTask} />
 
       <TasksList 
@@ -48,6 +47,7 @@ export function Home() {
         toggleTaskDone={handleToggleTaskDone}
         removeTask={handleRemoveTask} 
       />
+      
     </View>
   )
 }
@@ -55,6 +55,6 @@ export function Home() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#EBEBEB'
+    backgroundColor: '#1A1A1A',
   }
 })

@@ -10,6 +10,8 @@ interface TodoInputProps {
   addTask: (task: string) => void;
 }
 
+
+
 export function TodoInput({ addTask }: TodoInputProps) {
   const [task, setTask] = useState('');
 
@@ -17,19 +19,19 @@ export function TodoInput({ addTask }: TodoInputProps) {
     //TODO - Call addTask if task not empty and clean input value 
     if(!task)
     return;
-
     addTask(task)
     setTask('')
+    
   }
-
+  
   return (
     <View style={styles.inputContainer}>
       <TextInput 
         style={styles.input} 
         placeholder="Adicionar novo todo..."
-        placeholderTextColor="#B2B2B2"
+        placeholderTextColor="#808080"
         returnKeyType="send"
-        selectionColor="#666666"
+        selectionColor="#F2F2F2"
         onChangeText={setTask}
         value={ task }
         onSubmitEditing={() => handleAddNewTask()}
@@ -38,12 +40,12 @@ export function TodoInput({ addTask }: TodoInputProps) {
       />
       <TouchableOpacity
         testID="add-new-task-button"
-        activeOpacity={0.7}
+        activeOpacity={0.8}
         style={styles.addButton}
         //TODO - onPress prop
         onPress={handleAddNewTask}
       >
-        <Feather name="chevron-right" size={24} color="#B2B2B2" />
+        <Feather style={styles.icon} name="plus-circle" />
       </TouchableOpacity>
     </View>
   )
@@ -51,31 +53,40 @@ export function TodoInput({ addTask }: TodoInputProps) {
 
 const styles = StyleSheet.create({
   inputContainer: {
-    backgroundColor: '#FFF',
-    borderRadius: 5,
     marginTop: -28,
     marginHorizontal: 24,
     flexDirection: 'row',
-    alignItems: 'center',
+    
+  
   },
   input: {
     flex: 1,
-    height: 56,
-    paddingHorizontal: 20,
-    backgroundColor: '#FFF',
-    borderTopLeftRadius: 5,
-    borderBottomLeftRadius: 5,
-    borderRightWidth: 1,
-    borderRightColor: '#EBEBEB',
-    color: '#666666'
+    height: 54,
+    width:271,
+    paddingHorizontal: 16,
+    backgroundColor: '#262626',
+    borderRadius:6,
+    color: '#F2F2F2',
+    borderWidth:1
+    
   },
   addButton: {
-    backgroundColor: '#FFF',
-    height: 56,
-    paddingHorizontal: 12,
+    backgroundColor: '#1A1A1A',
+    height: 52,
+    width:52,
     justifyContent: 'center',
     alignItems: 'center',
-    borderTopRightRadius: 5,
-    borderBottomRightRadius: 5,
+    borderRadius:6,
+    marginLeft:4,
   },
+
+  icon:{
+    fontSize:16,
+    color:"#F2F2F2",
+  },
+  borda:{
+    borderBottomColor:'#5E60CE'
+  }
+  
+
 });

@@ -17,16 +17,17 @@ export function Header({ tasksCounter }: HeaderProps) {
       
       <View style={styles.tasks}>
       </View>
-        {/* <Text style={styles.tasksCounter}>Você tem </Text>
-        <Text style={styles.tasksCounterBold}>{tasksCounter} {tasksCounterText}</Text> */}
+        <Text style={styles.tasksCounter}>Criadas </Text>
+        <Text style={styles.tasksCounterBold}>{tasksCounter} {tasksCounterText}</Text>
     </View>
   )
 }
 
 const styles = StyleSheet.create({
   container: {
+    
     height:173,
-    width:'100%',
+    width :'100%',
     backgroundColor: '#0d0d0d',
     paddingTop:70,
     paddingBottom:70,
@@ -44,7 +45,6 @@ const styles = StyleSheet.create({
     
   },
   tasksCounter: {
-    fontSize: 15,
     color: '#FFF',
     fontFamily: 'Inter_400Regular',
   },
