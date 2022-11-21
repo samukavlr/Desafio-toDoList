@@ -17,8 +17,7 @@ export function Header({ tasksCounter }: HeaderProps) {
       
       <View style={styles.tasks}>
       </View>
-        <Text style={styles.tasksCounter}>Criadas </Text>
-        <Text style={styles.tasksCounterBold}>{tasksCounter} {tasksCounterText}</Text>
+       
     </View>
   )
 }

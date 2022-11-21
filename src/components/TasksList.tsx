@@ -3,6 +3,7 @@ import { FlatList, Image, TouchableOpacity, View, Text, StyleSheet, FlatListProp
 // import Icon from 'react-native-vector-icons/Feather';
 import {Feather} from '@expo/vector-icons';
 import { ItemWrapper } from './ItemWrapper';
+import img from '../assets/images/logo/Clipboard.png'
 
 import trashIcon from '../assets/icons/trash/trash.png'
 
@@ -21,11 +22,23 @@ interface TasksListProps {
 export function TasksList({ tasks, toggleTaskDone, removeTask }: TasksListProps) {
   return (
     <FlatList
-      data={tasks}
-      keyExtractor={item => String(item.id)}
-      contentContainerStyle={{ paddingBottom: 24 }}
-      showsVerticalScrollIndicator={false}
-      renderItem={({ item, index }) => {
+    data={tasks}
+    keyExtractor={item => String(item.id)}
+    contentContainerStyle={{ paddingBottom: 24 }}
+    showsVerticalScrollIndicator={false}
+    ListEmptyComponent={()=>(
+    <View style ={styles.form} >
+      <Image source={img} />
+      <Text >
+      Você ainda não tem tarefas cadastradas
+      </Text>
+      <Text >
+      Crie tarefas e organize seus itens a fazer
+      </Text>
+      </View>
+    )}
+    renderItem={({ item, index }) => {
+      
         return (
           <ItemWrapper index={index}>
             <View>
@@ -86,6 +99,14 @@ export function TasksList({ tasks, toggleTaskDone, removeTask }: TasksListProps)
 }
 
 const styles = StyleSheet.create({
+  form:{
+    borderTopColor:'#333333',
+    borderTopWidth:1,
+    paddingTop:48,
+    alignItems:'center',
+    marginHorizontal:24,
+  },
+  
   taskButton: {
     flex: 1,
     paddingHorizontal: 24,

@@ -64,28 +64,31 @@ const styles = StyleSheet.create({
     height: 54,
     width:271,
     paddingHorizontal: 16,
-    backgroundColor: '#262626',
+    backgroundColor: '#333333',
     borderRadius:6,
     color: '#F2F2F2',
     borderWidth:1
     
   },
   addButton: {
-    backgroundColor: '#1A1A1A',
+    
     height: 52,
     width:52,
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius:6,
     marginLeft:4,
+    backgroundColor:"#1E6F9F"
   },
 
   icon:{
     fontSize:16,
     color:"#F2F2F2",
+    
   },
   borda:{
-    borderBottomColor:'#5E60CE'
+    borderBottomColor:'#5E60CE',
+    
   }
   
 
