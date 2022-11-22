@@ -93,7 +93,7 @@ export function TasksList({ tasks, toggleTaskDone, removeTask }: TasksListProps)
         )
       }}
       style={{
-        marginTop: 32
+        marginTop: 20
       }}
     />
   )
