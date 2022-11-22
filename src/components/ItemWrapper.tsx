@@ -4,6 +4,7 @@ import { View , StyleSheet} from 'react-native';
 interface ItemWrapperProps {
   index: number;
   children: ReactNode;
+  
 }
 
 export function ItemWrapper({ children }: ItemWrapperProps) {
@@ -25,15 +26,14 @@ const styles= StyleSheet.create({
   card: {
     flex:1,
     flexDirection:'row',
-    justifyContent:'center',
+    justifyContent:'space-between',
     height:64,
     alignItems:'center',
     backgroundColor:'#262626',
     borderRadius:8,
     marginBottom:8,
     marginHorizontal:24,
-
-
+   
 
   }
 

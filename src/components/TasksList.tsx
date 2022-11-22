@@ -28,11 +28,11 @@ export function TasksList({ tasks, toggleTaskDone, removeTask }: TasksListProps)
     showsVerticalScrollIndicator={false}
     ListEmptyComponent={()=>(
     <View style ={styles.form} >
-      <Image source={img} />
-      <Text >
+      <Image style ={styles.image} source={img}  />
+      <Text style={styles.text} >
       Você ainda não tem tarefas cadastradas
       </Text>
-      <Text >
+      <Text style={styles.text2}>
       Crie tarefas e organize seus itens a fazer
       </Text>
       </View>
@@ -41,7 +41,7 @@ export function TasksList({ tasks, toggleTaskDone, removeTask }: TasksListProps)
       
         return (
           <ItemWrapper index={index}>
-            <View>
+            <View >
               <TouchableOpacity
                 testID={`button-${index}`}
                 activeOpacity={0.7}
@@ -67,16 +67,17 @@ export function TasksList({ tasks, toggleTaskDone, removeTask }: TasksListProps)
                   )}
                 </View>
                 
-
-                <Text 
-                  //TODO - use style prop
-                  style={item.done
-                  ?styles.taskTextDone
-                  :styles.taskText
-                }
-                >
-                  {item.title}
-                </Text>
+                 <View style={styles.wrap}>
+                    <Text 
+                      //TODO - use style prop
+                      style={item.done
+                        ?styles.taskTextDone
+                        :styles.taskText
+                      }
+                      >
+                      {item.title}
+                    </Text>
+                  </View>   
               </TouchableOpacity>
             </View>
 
@@ -106,6 +107,23 @@ const styles = StyleSheet.create({
     alignItems:'center',
     marginHorizontal:24,
   },
+  wrap:{
+    flexWrap:'wrap'
+
+  },
+  image:{
+    marginBottom:16,
+    width:56,
+    height:56,
+  },
+  text:{
+    color:'#808080',
+    fontWeight: 'bold',
+    
+  },
+  text2:{
+    color:'#808080'
+  },
   
   taskButton: {
     flex: 1,
@@ -114,33 +132,37 @@ const styles = StyleSheet.create({
     marginBottom: 4,
     borderRadius: 4,
     flexDirection: 'row',
-    alignItems: 'center'
+    alignItems: 'center',
+    
   },
   taskMarker: {
-    height: 16,
-    width: 16,
-    borderRadius: 4,
-    borderWidth: 1,
-    borderColor: '#B2B2B2',
+    height: 18,
+    width: 18,
+    borderRadius: 10,
+    borderWidth: 2,
+    borderColor: '#4EA8DE',
     marginRight: 15,
     alignItems: 'center',
     justifyContent: 'center'
   },
   taskText: {
-    color: '#666',
-    fontFamily: 'Inter_500Medium'
+    color: '#fff',
+    fontFamily: 'Inter_500Medium',
+    
   },
   taskMarkerDone: {
-    height: 16,
-    width: 16,
-    borderRadius: 4,
-    backgroundColor: '#1DB863',
+    height: 18,
+    width: 18,
+    borderRadius: 10,
+    backgroundColor: '#8284FA',
     marginRight: 15,
     alignItems: 'center',
-    justifyContent: 'center'
+    justifyContent: 'center',
+   
+    
   },
   taskTextDone: {
-    color: '#1DB863',
+    color: '#808080',
     textDecorationLine: 'line-through',
     fontFamily: 'Inter_500Medium'
   }

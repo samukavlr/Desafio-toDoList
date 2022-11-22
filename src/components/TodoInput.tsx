@@ -30,8 +30,10 @@ export function TodoInput({ addTask }: TodoInputProps) {
         style={styles.input} 
         placeholder="Adicionar novo todo..."
         placeholderTextColor="#808080"
+        
         returnKeyType="send"
         selectionColor="#F2F2F2"
+        
         onChangeText={setTask}
         value={ task }
         onSubmitEditing={() => handleAddNewTask()}
@@ -67,7 +69,8 @@ const styles = StyleSheet.create({
     backgroundColor: '#333333',
     borderRadius:6,
     color: '#F2F2F2',
-    borderWidth:1
+    
+
     
   },
   addButton: {

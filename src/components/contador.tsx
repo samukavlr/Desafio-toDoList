@@ -29,7 +29,7 @@ export function Contador({ tasksCounter,taskcountercomplete }: CountProps) {
             <View style={styles.form}>
               <Text style={styles.tasksCounter2}>Concluidas </Text>
               <View style={styles.count}>
-                  <Text style={styles.tasksCounterBold}>{taskcountercomplete}</Text>
+                  <Text style={styles.tasksCounterBold1}>{taskcountercomplete}</Text>
               </View>
             </View>
 
@@ -39,6 +39,14 @@ export function Contador({ tasksCounter,taskcountercomplete }: CountProps) {
 }
 
 const styles = StyleSheet.create({
+
+  tasksCounterBold1:{ 
+    color: '#FFF',
+    fontFamily: 'Inter_700Bold',
+    alignItems:'center',
+    paddingLeft:7,
+    fontSize:12,
+  },
   container: {
     flexDirection:'row',
     alignItems: 'center',
@@ -73,8 +81,8 @@ const styles = StyleSheet.create({
     color: '#FFF',
     fontFamily: 'Inter_700Bold',
     alignItems:'center',
-    marginLeft:'auto',
-    marginRight:'auto',
+    paddingLeft:9,
+    fontSize:12,
     
     
   },
